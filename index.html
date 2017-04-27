@@ -13,6 +13,7 @@
 			let gregRadio = document.getElementById("greg");
 			let perBasicRadio = document.getElementById("per-basic");
 			let perAdvancedRadio = document.getElementById("per-adv");
+			let perCompRadio = document.getElementById("per-comp");
 			let isLeapYear = false;
 			if (gregRadio.checked)
 				isLeapYear = greg(year);
@@ -20,6 +21,8 @@
 				isLeapYear = persianBasic(year);
 			else if (perAdvancedRadio.checked)
 				isLeapYear = persianAdvanced(year);
+			else if (perCompRadio.checked)
+				isLeapYear = persianComputer(year);
 			if (isLeapYear){
 				resultPar.innerText = "Year " + year + " is a leap year";
 			}
@@ -44,6 +47,9 @@
 		<br/>
 		<input type="radio" id="per-adv" name="year"/>
 		<label for="per-adv">Persian Calendar Advanced</label>
+		<br/>
+		<input type="radio" id="per-comp" name="year"/>
+		<label for="per-comp">The most accurate Persian calendar</label>
 		<br/>
 		<button onclick="check()">Check!</button>
 

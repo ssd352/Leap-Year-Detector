@@ -24,6 +24,12 @@ function persianAdvanced(year){
 }
 
 
+function persianComputer(year){
+	let rem = (683 * (year + 2346)) % 2820;
+	return rem < 683;
+}
+
+
 function persianBasic(year){
 	let s1 = year % 33;
 	let remainders = new Set([1, 5, 9, 13, 17, 22, 26, 30]);
