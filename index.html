@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Leap Year</title>
+		<script>
+		function check(){
+			let yearTxtBox = document.getElementById("year");
+			let year = parseInt(yearTxtBox.value);
+			let resultPar = document.getElementById("result");
+			let gregRadio = document.getElementById("greg");
+			let perBasicRadio = document.getElementById("per-basic");
+			let perAdvancedRadio = document.getElementById("per-adv");
+			let isLeapYear = false;
+			if (gregRadio.checked)
+				isLeapYear = greg(year);
+			else if (perBasicRadio.checked)
+				isLeapYear = persianBasic(year);
+			else if (perAdvancedRadio.checked)
+				isLeapYear = persianAdvanced(year);
+			if (isLeapYear){
+				resultPar.innerText = "Year " + year + " is a leap year";
+			}
+			else{
+				resultPar.innerText = "Year " + year + " is not a leap year";
+			}
+			
+}
+</script>
+		<script src="leap-year.js"></script>
+	</head>
+	
+	<body>
+		
+		<input type="text" id="year"/>
+		<br/>
+		<input type="radio" id="greg" name="year" checked/>
+		<label for="greg">Gregorian Calendar</label>
+		<br/>
+		<input type="radio" id="per-basic" name="year"/>
+		<label for="per-basic">Persian Calendar Basic</label>
+		<br/>
+		<input type="radio" id="per-adv" name="year"/>
+		<label for="per-adv">Persian Calendar Advanced</label>
+		<br/>
+		<button onclick="check()">Check!</button>
+
+		<p id="result">
+		</p>
+	
+	</body>
+	
+	
+</html>
