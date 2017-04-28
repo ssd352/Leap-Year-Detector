@@ -5,33 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<title>Leap Year</title>
-		<script>
-		function check(){
-			let yearTxtBox = document.getElementById("year");
-			let year = parseInt(yearTxtBox.value);
-			let resultPar = document.getElementById("result");
-			let gregRadio = document.getElementById("greg");
-			let perBasicRadio = document.getElementById("per-basic");
-			let perAdvancedRadio = document.getElementById("per-adv");
-			let perCompRadio = document.getElementById("per-comp");
-			let isLeapYear = false;
-			if (gregRadio.checked)
-				isLeapYear = greg(year);
-			else if (perBasicRadio.checked)
-				isLeapYear = persianBasic(year);
-			else if (perAdvancedRadio.checked)
-				isLeapYear = persianAdvanced(year);
-			else if (perCompRadio.checked)
-				isLeapYear = persianComputer(year);
-			if (isLeapYear){
-				resultPar.innerText = "Year " + year + " is a leap year";
-			}
-			else{
-				resultPar.innerText = "Year " + year + " is not a leap year";
-			}
-			
-}
-</script>
 		<script src="leap-year.js"></script>
 	</head>
 	

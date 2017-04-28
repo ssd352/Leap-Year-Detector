@@ -1,3 +1,30 @@
+function check(){
+			let yearTxtBox = document.getElementById("year");
+			let year = parseInt(yearTxtBox.value);
+			let resultPar = document.getElementById("result");
+			let gregRadio = document.getElementById("greg");
+			let perBasicRadio = document.getElementById("per-basic");
+			let perAdvancedRadio = document.getElementById("per-adv");
+			let perCompRadio = document.getElementById("per-comp");
+			let isLeapYear = false;
+			if (gregRadio.checked)
+				isLeapYear = greg(year);
+			else if (perBasicRadio.checked)
+				isLeapYear = persianBasic(year);
+			else if (perAdvancedRadio.checked)
+				isLeapYear = persianAdvanced(year);
+			else if (perCompRadio.checked)
+				isLeapYear = persianComputer(year);
+			if (isLeapYear){
+				resultPar.innerText = "Year " + year + " is a leap year";
+			}
+			else{
+				resultPar.innerText = "Year " + year + " is not a leap year";
+			}
+			
+}
+
+
 function greg(year){
 	if (year % 4 == 0 && year % 100 != 0)
 		return true;
