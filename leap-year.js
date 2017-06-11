@@ -24,7 +24,6 @@ function check(){
 			
 }
 
-
 function greg(year){
 	if (year % 4 == 0 && year % 100 != 0)
 		return true;
@@ -61,4 +60,12 @@ function persianBasic(year){
 	let s1 = year % 33;
 	let remainders = new Set([1, 5, 9, 13, 17, 22, 26, 30]);
 	return remainders.has(s1);
+}
+
+function nextLeapYear(){
+	year = new Date().getUTCFullYear();
+	for (let tmp = year; tmp < year + 6; tmp++)
+		if (greg(tmp)){
+			return tmp;
+		}
 }
