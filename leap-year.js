@@ -63,7 +63,7 @@ function persianBasic(year){
 }
 
 function getNextLeapYear(){
-	year = new Date().getUTCFullYear();
+	let year = new Date().getUTCFullYear();
 	for (let tmp = year; tmp < year + 10; tmp++)
 		if (greg(tmp)){
 			return tmp;
